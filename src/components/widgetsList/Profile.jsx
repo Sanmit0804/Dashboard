@@ -16,7 +16,7 @@ const Profile = () => {
                         </div>
                     </div>
                     <div className="mb-4">
-                        <a href="#" className="fs-14 fw-bold d-block"> Alexandra Della</a>
+                        <a href="#" className="fs-14 fw-bold d-block"> Sanmit Della</a>
                         <a href="#" className="fs-12 fw-normal text-muted d-block">alex.della@outlook.com</a>
                     </div>
                     <div className="fs-12 fw-normal text-muted text-center d-flex flex-wrap gap-3 mb-4">

@@ -41,6 +41,7 @@ $info: #02a0e4;
 $danger: #d13b4c;
 $dark: #283c50; // new added
 $darken: #001327; // new added
+$alois-theme-color: #ff5100;
 
 // Body
 $body-bg: #f0f2f8;
@@ -48,7 +49,8 @@ $body-color: #4b5563;
 $text-muted: #64748b;
 
 // Colors Map
-$primary: $blue;
+// $primary: $blue;
+$primary: $alois-theme-color;
 $secondary: $gray-600;
 $success: $green;
 $info: $cyan;
