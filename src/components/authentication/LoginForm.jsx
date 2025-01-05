@@ -30,6 +30,8 @@ const LoginForm = ({ registerPath, resetPath }) => {
 
             const data = await response.json();
             console.log("data---",data);
+            localStorage.setItem('token', data.token); // Store token in localStorage
+            // fetchCurrentUser(); // Fetch user details after login
 
             if (response.ok) {
                 // If login is successful, navigate to the home page
