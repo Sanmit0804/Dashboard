@@ -69,29 +69,29 @@ const Header = () => {
         };
     }, []);
 
-    const handleNavigationExpendUp = (e, pram) => {
-        e.preventDefault()
-        if (pram === "show") {
-            setNavigationExpend(true);
-            document.documentElement.classList.add('minimenu')
-        }
-        else {
-            setNavigationExpend(false);
-            document.documentElement.classList.remove('minimenu')
-        }
-    }
+    // const handleNavigationExpendUp = (e, pram) => {
+    //     e.preventDefault()
+    //     if (pram === "show") {
+    //         setNavigationExpend(true);
+    //         document.documentElement.classList.add('minimenu')
+    //     }
+    //     else {
+    //         setNavigationExpend(false);
+    //         document.documentElement.classList.remove('minimenu')
+    //     }
+    // }
 
-    const handleNavigationExpendDown = (e, pram) => {
-        e.preventDefault()
-        if (pram === "show") {
-            setNavigationExpend(true);
-            document.documentElement.classList.remove('minimenu')
-        }
-        else {
-            setNavigationExpend(false);
-            document.documentElement.classList.add('minimenu')
-        }
-    }
+    // const handleNavigationExpendDown = (e, pram) => {
+    //     e.preventDefault()
+    //     if (pram === "show") {
+    //         setNavigationExpend(true);
+    //         document.documentElement.classList.remove('minimenu')
+    //     }
+    //     else {
+    //         setNavigationExpend(false);
+    //         document.documentElement.classList.add('minimenu')
+    //     }
+    // }
 
     const fullScreenMaximize = () => {
         const elem = document.documentElement;
@@ -132,29 +132,29 @@ const Header = () => {
                 {/* <!--! [Start] Header Left !--> */}
                 <div className="header-left d-flex align-items-center gap-4">
                     {/* <!--! [Start] nxl-head-mobile-toggler !--> */}
-                    <a href="#" className="nxl-head-mobile-toggler" onClick={(e) => {e.preventDefault(), setNavigationOpen(true)}} id="mobile-collapse">
+                    {/* <a href="#" className="nxl-head-mobile-toggler" onClick={(e) => {e.preventDefault(), setNavigationOpen(true)}} id="mobile-collapse">
                         <div className={`hamburger hamburger--arrowturn ${navigationOpen ? "is-active" : ""}`}>
                             <div className="hamburger-box">
                                 <div className="hamburger-inner"></div>
                             </div>
                         </div>
-                    </a>
+                    </a> */}
                     {/* <!--! [Start] nxl-head-mobile-toggler !-->
                     <!--! [Start] nxl-navigation-toggle !--> */}
                     <div className="nxl-navigation-toggle navigation-up-1600">
                         <a href="#" onClick={(e) => handleNavigationExpendUp(e, "show")} id="menu-mini-button" ref={miniButtonRef} style={{ display: navigationExpend ? "none" : "block" }}>
-                            <FiAlignLeft size={24} />
+                            {/* <FiAlignLeft size={24} /> */}
                         </a>
                         <a href="#" onClick={(e) => handleNavigationExpendUp(e, "hide")} id="menu-expend-button" ref={expendButtonRef} style={{ display: navigationExpend ? "block" : "none" }}>
-                            <FiArrowRight size={24} />
+                            {/* <FiArrowRight size={24} /> */}
                         </a>
                     </div>
                     <div className="nxl-navigation-toggle navigation-down-1600">
                         <a href="#" onClick={(e) => handleNavigationExpendDown(e, "hide")} id="menu-mini-button" ref={miniButtonRef} style={{ display: navigationExpend ? "block" : "none" }}>
-                            <FiAlignLeft size={24} />
+                            {/* <FiAlignLeft size={24} /> */}
                         </a>
                         <a href="#" onClick={(e) => handleNavigationExpendDown(e, "show")} id="menu-expend-button" ref={expendButtonRef} style={{ display: navigationExpend ? "none" : "block" }}>
-                            <FiArrowRight size={24} />
+                            {/* <FiArrowRight size={24} /> */}
                         </a>
                     </div>
                     {/* <!--! [End] nxl-navigation-toggle !-->
@@ -175,8 +175,8 @@ const Header = () => {
                         </div>
                         {/* <!--! [Start] nxl-lavel-mega-menu-wrapper !--> */}
                         <div className="nxl-lavel-mega-menu-wrapper d-flex gap-3">
-                            <HeaderDropDownModal />
-                            <MegaMenu />
+                            {/* <HeaderDropDownModal /> */}
+                            {/* <MegaMenu /> */}
                         </div>
                     </div>
                 </div>
@@ -194,7 +194,7 @@ const Header = () => {
                                 </span>
                             </div>
                         </div>
-                        <div className="nxl-h-item dark-light-theme">
+                        <div className="nxl-h-item dark-light-theme me-2">
                             <div className="nxl-head-link me-0 dark-button" onClick={() => handleThemeMode("dark")}>
                                 <FiMoon size={20} />
                             </div>
@@ -202,8 +202,8 @@ const Header = () => {
                                 <FiSun size={20} />
                             </div>
                         </div>
-                        <TimesheetsModal />
-                        <NotificationsModal />
+                        {/* <TimesheetsModal /> */}
+                        {/* <NotificationsModal /> */}
                         <ProfileModal />
                     </div>
                 </div>

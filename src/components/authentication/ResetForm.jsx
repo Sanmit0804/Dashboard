@@ -10,13 +10,13 @@ const ResetForm = ({ path }) => {
                 access our the best recommendation for you.</p>
             <form action="auth-resetting-cover.html" className="w-100 mt-4 pt-2">
                 <div className="mb-4">
-                    <input className="form-control" placeholder="Email or Username" required />
+                    <input className="form-control" placeholder="Email" required />
                 </div>
                 <div className="mt-5">
                     <button type="submit" className="btn btn-lg btn-primary w-100">Reset Now</button>
                 </div>
             </form>
-            <div className="mt-5 text-muted">
+            <div className="mt-2 text-muted">
                 <span> Don't have an account?</span>
                 <Link to={path} className="fw-bold"> Create an Account</Link>
             </div>

@@ -7,16 +7,16 @@ const RegisterCover = () => {
             <div className="auth-cover-content-inner">
                 <div className="auth-cover-content-wrapper">
                     <div className="auth-img">
-                        <img src="/images/auth/auth-cover-register-bg.svg" alt="img" className="img-fluid" />
+                        <img src="/images/ALOIS_SOLUTIONS_LOGO.png" alt="img" className="img-fluid" />
                     </div>
                 </div>
             </div>
             <div className="auth-cover-sidebar-inner">
                 <div className="auth-cover-card-wrapper">
                     <div className="auth-cover-card p-sm-5">
-                        <div className="wd-50 mb-5">
+                        {/* <div className="wd-50 ">
                             <img src="/images/logo-abbr.png" alt="img" className="img-fluid" />
-                        </div>
+                        </div> */}
                         <RegisterForm path={"/authentication/login/cover"} />
                     </div>
                 </div>

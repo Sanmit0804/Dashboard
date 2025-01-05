@@ -1,20 +1,32 @@
 import React, { Fragment } from 'react'
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 import { FiActivity, FiBell, FiChevronRight, FiDollarSign, FiLogOut, FiSettings, FiUser } from "react-icons/fi"
 
 const activePosition = ["Active", "Always", "Bussy", "Inactive", "Disabled", "Cutomization"]
 const subscriptionsList = ["Plan", "Billings", "Referrals", "Payments", "Statements", "Subscriptions"]
+
 const ProfileModal = () => {
+    const navigate = useNavigate(); 
+
+
+    const handleLogout = () => {
+        // Perform any necessary cleanup before logout here (e.g., clearing tokens, etc.)
+
+        // Redirect to login page
+        navigate('/authentication/login/cover');
+    }
+
     return (
         <div className="dropdown nxl-h-item">
             <a href="#" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside">
-                <img src="/images/avatar/1.png" alt="user-image" className="img-fluid user-avtar me-0" />
+                <img src="/images/avatar/user.png" alt="user-image" className="img-fluid user-avtar me-0" />
             </a>
             <div className="dropdown-menu dropdown-menu-end nxl-h-dropdown nxl-user-dropdown">
                 <div className="dropdown-header">
                     <div className="d-flex align-items-center">
-                        <img src="/images/avatar/1.png" alt="user-image" className="img-fluid user-avtar" />
+                        <img src="/images/avatar/user.png" alt="user-image" className="img-fluid user-avtar" />
                         <div>
-                            <h6 className="text-dark mb-0">Alexandra Della <span className="badge bg-soft-success text-success ms-1">PRO</span></h6>
+                            <h6 className="text-dark mb-0">Sanmit Suthar<span className="badge bg-soft-success text-success ms-1">PRO</span></h6>
                             <span className="fs-12 fw-medium text-muted">alex.della@outlook.com</span>
                         </div>
                     </div>
@@ -95,7 +107,7 @@ const ProfileModal = () => {
                     <span>Account Settings</span>
                 </a>
                 <div className="dropdown-divider"></div>
-                <a href="./auth-login-minimal.html" className="dropdown-item">
+                <a href="#" className="dropdown-item" onClick={handleLogout}> {/* Add onClick to logout */}
                     <i> <FiLogOut /></i>
                     <span>Logout</span>
                 </a>
