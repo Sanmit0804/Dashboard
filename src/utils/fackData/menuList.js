@@ -4,6 +4,7 @@ export const menuList = [
         name: "dashboards",
         path: "#",
         icon: 'feather-airplay',
+        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -21,9 +22,10 @@ export const menuList = [
     },
     {
         id: 1,
-        name: "HR (Human Resource)",
+        name: "Human Resource",
         path: "#",
         icon: 'feather-users',
+        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -53,20 +55,21 @@ export const menuList = [
     },
     {
         id: 2,
-        name: "CR (Corporate Recruiter)",
+        name: "Corporate Recruitment",
         path: '#',
         icon: 'feather-send',
+        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
                 name: "Recruitment Metrics",
-                path: "/applications/chat",
+                path: "/corporate-recruitment/recruitment-metrics",
                 subdropdownMenu: false
             },
             {
                 id: 2,
                 name: "Candidate Analytics",
-                path: "/applications/email",
+                path: "/corporate-recruitment/candidate-analytics",
                 subdropdownMenu: false
             },
             {
@@ -91,9 +94,10 @@ export const menuList = [
     },
     {
         id: 3,
-        name: "DM (Digital Marketing)",
+        name: "Digital Marketing",
         path: "#",
-        icon: 'feather-dollar-sign',
+        icon: 'feather-alert-circle',
+        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -148,37 +152,39 @@ export const menuList = [
             },
         ],
     },
-    {
-        id: 4,
-        name: "Labs",
-        path: "#",
-        icon: 'feather-layout',
-        dropdownMenu: [
-            {
-                id: 1,
-                name: "Payment",
-                path: "/payment/list",
-                subdropdownMenu: false
-            },
-            {
-                id: 2,
-                name: "Invoice View",
-                path: "/payment/view",
-                subdropdownMenu: false
-            },
-            {
-                id: 4,
-                name: "Invoice Create",
-                path: "/payment/create",
-                subdropdownMenu: false
-            }
-        ]
-    },
+    // {
+    //     id: 4,
+    //     name: "Labs",
+    //     path: "#",
+    //     icon: 'feather-layout',
+    //     userType: 'user',
+    //     dropdownMenu: [
+    //         {
+    //             id: 1,
+    //             name: "Payment",
+    //             path: "/payment/list",
+    //             subdropdownMenu: false
+    //         },
+    //         {
+    //             id: 2,
+    //             name: "Invoice View",
+    //             path: "/payment/view",
+    //             subdropdownMenu: false
+    //         },
+    //         {
+    //             id: 4,
+    //             name: "Invoice Create",
+    //             path: "/payment/create",
+    //             subdropdownMenu: false
+    //         }
+    //     ]
+    // },
     {
         id: 5,
         name: "L&D",
         path: "#",
         icon: 'feather-users',
+        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -206,92 +212,100 @@ export const menuList = [
             }
         ]
     },
-    // {
-    //     id: 6,
-    //     name: "leads",
-    //     path: "#",
-    //     icon: 'feather-alert-circle',
-    //     dropdownMenu: [
-    //         {
-    //             id: 1,
-    //             name: "Leads",
-    //             path: "/leads/list",
-    //             subdropdownMenu: false
-    //         },
-    //         {
-    //             id: 2,
-    //             name: "Leads View",
-    //             path: "/leads/view",
-    //             subdropdownMenu: false
-    //         },
-    //         {
-    //             id: 3,
-    //             name: "Leads Create",
-    //             path: "/leads/create",
-    //             subdropdownMenu: false
-    //         }
-    //     ]
-    // },
-    // {
-    //     id: 7,
-    //     name: "projects",
-    //     path: "#",
-    //     icon: 'feather-briefcase',
-    //     dropdownMenu: [
-    //         {
-    //             id: 1,
-    //             name: "Projects",
-    //             path: "/projects/list",
-    //             subdropdownMenu: false
-    //         },
-    //         {
-    //             id: 2,
-    //             name: "Projects View",
-    //             path: "/projects/view",
-    //             subdropdownMenu: false
-    //         },
-    //         {
-    //             id: 3,
-    //             name: "Projects Create",
-    //             path: "/projects/create",
-    //             subdropdownMenu: false
-    //         }
-    //     ]
-    // },
+    {
+        id: 6,
+        name: "Finance",
+        path: "#",
+        icon: 'feather-dollar-sign',
+        userType: 'user',
+        dropdownMenu: [
+            {
+                id: 1,
+                name: "Financial Planning and Analysis",
+                path: "/leads/list",
+                subdropdownMenu: false
+            },
+            {
+                id: 2,
+                name: "Budgeting and Forecasting",
+                path: "/leads/view",
+                subdropdownMenu: false
+            },
+            {
+                id: 3,
+                name: "Accounts Payable and Receivable",
+                path: "/leads/create",
+                subdropdownMenu: false
+            },
+            {
+                id: 4,
+                name: "Taxation and Compliance",
+                path: "/leads/create",
+                subdropdownMenu: false
+            },
+            {
+                id: 5,
+                name: "Audit and Risk Management",
+                path: "/leads/create",
+                subdropdownMenu: false
+            }
+        ]
+    },
+    {
+        id: 7,
+        name: "IT (Information Tech)",
+        path: "#",
+        icon: 'feather-briefcase',
+        userType: 'user',
+        dropdownMenu: [
+            {
+                id: 1,
+                name: "Projects",
+                path: "/projects/list",
+                subdropdownMenu: false
+            },
+            {
+                id: 2,
+                name: "Projects View",
+                path: "/projects/view",
+                subdropdownMenu: false
+            },
+            {
+                id: 3,
+                name: "Projects Create",
+                path: "/projects/create",
+                subdropdownMenu: false
+            }
+        ]
+    },
     // {
     //     id: 8,
-    //     name: "widgets",
+    //     name: "Support/Service",
     //     path: "#",
     //     icon: 'feather-layout',
     //     dropdownMenu: [
     //         {
     //             id: 1,
-    //             name: "Lists",
+    //             name: "Help Desk Support",
     //             path: "/widgets/lists",
     //             subdropdownMenu: false
     //         },
     //         {
     //             id: 2,
-    //             name: "Tables",
+    //             name: "Complaint Resolution",
     //             path: "/widgets/tables",
     //             subdropdownMenu: false
     //         },
     //         {
     //             id: 3,
-    //             name: "Charts",
+    //             name: "Client Success Management",
     //             path: "/widgets/charts",
     //             subdropdownMenu: false
     //         },
     //         {
     //             id: 4,
-    //             name: "Statistics",
+    //             name: "After-Sales Support",
     //             path: "/widgets/statistics",
-    //             subdropdownMenu: false
-    //         },
-    //         {
-    //             id: 5,
-    //             name: "Miscellaneous",
-    //             path: "/widgets/miscellaneous",
     //             subdropdownMenu: false
     //         },
     //     ]

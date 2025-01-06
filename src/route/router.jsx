@@ -1,3 +1,4 @@
+// router.jsx
 import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "../layout/root";
 import Home from "../pages/home";
@@ -68,6 +69,9 @@ import WidgetsTables from "../pages/widgets-tables";
 import WidgetsCharts from "../pages/widgets-charts";
 import WidgetsStatistics from "../pages/widgets-statistics";
 import WidgetsMiscellaneous from "../pages/widgets-miscellaneous";
+import ProtectedRoute from '../components/ProtectedRoute'
+import RecruitmentMetrics from '../../src/pages/recruitment-metrics';
+import CandidateAnalysis from '../../src/pages/CandidateAnalysis';
 
 export const router = createBrowserRouter([
     {
@@ -76,283 +80,301 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Home />
+                element: (
+                    <ProtectedRoute>
+                        <Home />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/dashboards/analytics",
-                element: <Analytics />
+                element: (
+                    <ProtectedRoute>
+                        <Analytics />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/reports/sales",
-                element: <ReportsSales />
+                element: (
+                    <ProtectedRoute>
+                        <ReportsSales />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/reports/leads",
-                element: <ReportsLeads />
+                element: (
+                    <ProtectedRoute>
+                        <ReportsLeads />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/reports/project",
-                element: <ReportsProject />
+                element: (
+                    <ProtectedRoute>
+                        <ReportsProject />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/reports/timesheets",
-                element: <ReportsTimesheets />
+                element: (
+                    <ProtectedRoute>
+                        <ReportsTimesheets />
+                    </ProtectedRoute>
+                ),
             },
             {
-                path: "/proposal/list",
-                element: <Proposalist />
+                path: "/corporate-recruitment/recruitment-metrics",
+                element: (
+                    <ProtectedRoute>
+                        <RecruitmentMetrics />
+                    </ProtectedRoute>
+                ),
             },
             {
-                path: "/proposal/view",
-                element: <ProposalView />
+                path: "/corporate-recruitment/candidate-analytics",
+                element: (
+                    <ProtectedRoute>
+                        <CandidateAnalysis />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/proposal/edit",
-                element: <ProposalEdit />
+                element: (
+                    <ProtectedRoute>
+                        <ProposalEdit />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/proposal/create",
-                element: <ProposalCreate />
+                element: (
+                    <ProtectedRoute>
+                        <ProposalCreate />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/payment/list",
-                element: <PaymentList />
+                element: (
+                    <ProtectedRoute>
+                        <PaymentList />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/payment/view",
-                element: <PaymentView />
+                element: (
+                    <ProtectedRoute>
+                        <PaymentView />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/payment/create",
-                element: <PaymentCreate />
+                element: (
+                    <ProtectedRoute>
+                        <PaymentCreate />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/customers/list",
-                element: <CustomersList />
+                element: (
+                    <ProtectedRoute>
+                        <CustomersList />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/customers/view",
-                element: <CustomersView />
+                element: (
+                    <ProtectedRoute>
+                        <CustomersView />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/customers/create",
-                element: <CustomersCreate />
+                element: (
+                    <ProtectedRoute>
+                        <CustomersCreate />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/leads/list",
-                element: <LeadsList />
+                element: (
+                    <ProtectedRoute>
+                        <LeadsList />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/leads/view",
-                element: <LeadsView />
+                element: (
+                    <ProtectedRoute>
+                        <LeadsView />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/leads/create",
-                element: <LeadsCreate />
+                element: (
+                    <ProtectedRoute>
+                        <LeadsCreate />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/projects/list",
-                element: <ProjectsList />
+                element: (
+                    <ProtectedRoute>
+                        <ProjectsList />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/projects/view",
-                element: <ProjectsView />
+                element: (
+                    <ProtectedRoute>
+                        <ProjectsView />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/projects/create",
-                element: <ProjectsCreate />
+                element: (
+                    <ProtectedRoute>
+                        <ProjectsCreate />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/widgets/lists",
-                element: <WidgetsLists />
+                element: (
+                    <ProtectedRoute>
+                        <WidgetsLists />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/widgets/tables",
-                element: <WidgetsTables />
+                element: (
+                    <ProtectedRoute>
+                        <WidgetsTables />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/widgets/charts",
-                element: <WidgetsCharts/>
+                element: (
+                    <ProtectedRoute>
+                        <WidgetsCharts />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/widgets/statistics",
-                element: <WidgetsStatistics/>
+                element: (
+                    <ProtectedRoute>
+                        <WidgetsStatistics />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/widgets/miscellaneous",
-                element: <WidgetsMiscellaneous/>
+                element: (
+                    <ProtectedRoute>
+                        <WidgetsMiscellaneous />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "/help/knowledgebase",
-                element: <HelpKnowledgebase />
-            },
-
-        ]
-    },
-    {
-        path: "/",
-        element: <LayoutApplications />,
-        children: [
-            {
-                path: "/applications/chat",
-                element: <AppsChat />
-            },
-            {
-                path: "/applications/email",
-                element: <AppsEmail />
-            },
-            {
-                path: "/applications/tasks",
-                element: <AppsTasks />
-            },
-            {
-                path: "/applications/notes",
-                element: <AppsNotes />
-            },
-            {
-                path: "/applications/calender",
-                element: <AppsCalender />
-            },
-            {
-                path: "/applications/storage",
-                element: <AppsStorage />
+                element: (
+                    <ProtectedRoute>
+                        <HelpKnowledgebase />
+                    </ProtectedRoute>
+                ),
             },
         ]
     },
     {
-        path: "/",
-        element: <LayoutSetting />,
-        children: [
-            {
-                path: "/settings/ganeral",
-                element: <SettingsGaneral />
-            },
-            {
-                path: "/settings/seo",
-                element: <SettingsSeo />
-            },
-            {
-                path: "/settings/tags",
-                element: <SettingsTags />
-            },
-            {
-                path: "/settings/email",
-                element: <SettingsEmail />
-            },
-            {
-                path: "/settings/tasks",
-                element: <SettingsTasks />
-            },
-            {
-                path: "/settings/leads",
-                element: <SettingsLeads />
-            },
-            {
-                path: "/settings/Support",
-                element: <SettingsSupport />
-            },
-            {
-                path: "/settings/finance",
-                element: <SettingsFinance />
-            },
-            {
-                path: "/settings/gateways",
-                element: <SettingsGateways />
-            },
-            {
-                path: "/settings/customers",
-                element: <SettingsCustomers />
-            },
-            {
-                path: "/settings/localization",
-                element: <SettingsLocalization />
-            },
-            {
-                path: "/settings/recaptcha",
-                element: <SettingsRecaptcha />
-            },
-            {
-                path: "/settings/miscellaneous",
-                element: <SettingsMiscellaneous />
-            },
-        ]
+        path: "/authentication/login/cover",
+        element: <LoginCover />,
+    },
+    // Authentication routes
+    {
+        path: "/authentication/login/minimal",
+        element: <LoginMinimal />,
     },
     {
-        path: "/",
-        element: <LayoutAuth />,
-        children: [
-            {
-                path: "/authentication/login/cover",
-                element: <LoginCover />
-            },
-            {
-                path: "/authentication/login/minimal",
-                element: <LoginMinimal />
-            },
-            {
-                path: "/authentication/login/creative",
-                element: <LoginCreative />
-            },
-            {
-                path: "/authentication/register/cover",
-                element: <RegisterCover />
-            },
-            {
-                path: "/authentication/register/minimal",
-                element: <RegisterMinimal />
-            },
-            {
-                path: "/authentication/register/creative",
-                element: <RegisterCreative />
-            },
-            {
-                path: "/authentication/reset/cover",
-                element: <ResetCover />
-            },
-            {
-                path: "/authentication/reset/minimal",
-                element: <ResetMinimal />
-            },
-            {
-                path: "/authentication/reset/creative",
-                element: <ResetCreative />
-            },
-            {
-                path: "/authentication/404/cover",
-                element: <ErrorCover />
-            },
-            {
-                path: "/authentication/404/minimal",
-                element: <ErrorMinimal />
-            },
-            {
-                path: "/authentication/404/creative",
-                element: <ErrorCreative />
-            },
-            {
-                path: "/authentication/verify/cover",
-                element: <OtpCover />
-            },
-            {
-                path: "/authentication/verify/minimal",
-                element: <OtpMinimal />
-            },
-            {
-                path: "/authentication/verify/creative",
-                element: <OtpCreative />
-            },
-            {
-                path: "/authentication/maintenance/cover",
-                element: <MaintenanceCover />
-            },
-            {
-                path: "/authentication/maintenance/minimal",
-                element: <MaintenanceMinimal />
-            },
-            {
-                path: "/authentication/maintenance/creative",
-                element: <MaintenanceCreative />
-            },
-        ]
-    }
-])
+        path: "/authentication/login/creative",
+        element: <LoginCreative />,
+    },
+    {
+        path: "/authentication/register/cover",
+        element: <RegisterCover />,
+    },
+    {
+        path: "/authentication/register/minimal",
+        element: <RegisterMinimal />,
+    },
+    {
+        path: "/authentication/register/creative",
+        element: <RegisterCreative />,
+    },
+    {
+        path: "/authentication/reset/cover",
+        element: <ResetCover />,
+    },
+    {
+        path: "/authentication/reset/minimal",
+        element: <ResetMinimal />,
+    },
+    {
+        path: "/authentication/reset/creative",
+        element: <ResetCreative />,
+    },
+    {
+        path: "/authentication/404/cover",
+        element: <ErrorCover />,
+    },
+    {
+        path: "/authentication/404/minimal",
+        element: <ErrorMinimal />,
+    },
+    {
+        path: "/authentication/404/creative",
+        element: <ErrorCreative />,
+    },
+    {
+        path: "/authentication/verify/cover",
+        element: <OtpCover />,
+    },
+    {
+        path: "/authentication/verify/minimal",
+        element: <OtpMinimal />,
+    },
+    {
+        path: "/authentication/verify/creative",
+        element: <OtpCreative />,
+    },
+    {
+        path: "/authentication/maintenance/cover",
+        element: <MaintenanceCover />,
+    },
+    {
+        path: "/authentication/maintenance/minimal",
+        element: <MaintenanceMinimal />,
+    },
+    {
+        path: "/authentication/maintenance/creative",
+        element: <MaintenanceCreative />,
+    },
+]);

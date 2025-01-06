@@ -13,7 +13,7 @@ import { NavigationContext } from '../../../contentApi/navigationProvider';
 const Header = () => {
     const { navigationOpen, setNavigationOpen } = useContext(NavigationContext)
     const [openMegaMenu, setOpenMegaMenu] = useState(false)
-    const [navigationExpend, setNavigationExpend] = useState(false)
+    const [navigationExpend, setNavigationExpend] = useState(true);
     const miniButtonRef = useRef(null);
     const expendButtonRef = useRef(null);
 
@@ -44,55 +44,43 @@ const Header = () => {
             if (newWindowWidth <= 1024) {
                 document.documentElement.classList.remove('minimenu');
                 document.querySelector('.navigation-down-1600').style.display = 'none';
-            }
-            else if (newWindowWidth >= 1025 && newWindowWidth <= 1400) {
-                document.documentElement.classList.add('minimenu');
+            } else if (newWindowWidth >= 1025 && newWindowWidth <= 1400) {
+                // Ensure minimenu is not added to avoid shrinking
+                document.documentElement.classList.remove('minimenu');
                 document.querySelector('.navigation-up-1600').style.display = 'none';
                 document.querySelector('.navigation-down-1600').style.display = 'block';
-            }
-            else {
+            } else {
                 document.documentElement.classList.remove('minimenu');
                 document.querySelector('.navigation-up-1600').style.display = 'block';
                 document.querySelector('.navigation-down-1600').style.display = 'none';
             }
         };
-
+    
         window.addEventListener('resize', handleResize);
-
+    
         handleResize();
-
+    
         const savedSkinTheme = localStorage.getItem("skinTheme");
-        handleThemeMode(savedSkinTheme)
-
+        handleThemeMode(savedSkinTheme);
+    
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+    
 
-    // const handleNavigationExpendUp = (e, pram) => {
-    //     e.preventDefault()
-    //     if (pram === "show") {
-    //         setNavigationExpend(true);
-    //         document.documentElement.classList.add('minimenu')
-    //     }
-    //     else {
-    //         setNavigationExpend(false);
-    //         document.documentElement.classList.remove('minimenu')
-    //     }
-    // }
-
-    // const handleNavigationExpendDown = (e, pram) => {
-    //     e.preventDefault()
-    //     if (pram === "show") {
-    //         setNavigationExpend(true);
-    //         document.documentElement.classList.remove('minimenu')
-    //     }
-    //     else {
-    //         setNavigationExpend(false);
-    //         document.documentElement.classList.add('minimenu')
-    //     }
-    // }
-
+    const handleNavigationExpendUp = (e) => {
+        e.preventDefault();
+        setNavigationExpend(true);
+        document.documentElement.classList.remove('minimenu'); // Always remove the minimenu class
+    };
+    
+    const handleNavigationExpendDown = (e) => {
+        e.preventDefault();
+        setNavigationExpend(true);
+        document.documentElement.classList.remove('minimenu'); // Always remove the minimenu class
+    };
+    
     const fullScreenMaximize = () => {
         const elem = document.documentElement;
 
@@ -132,38 +120,33 @@ const Header = () => {
                 {/* <!--! [Start] Header Left !--> */}
                 <div className="header-left d-flex align-items-center gap-4">
                     {/* <!--! [Start] nxl-head-mobile-toggler !--> */}
-                    {/* <a href="#" className="nxl-head-mobile-toggler" onClick={(e) => {e.preventDefault(), setNavigationOpen(true)}} id="mobile-collapse">
+                    <a href="#" className="nxl-head-mobile-toggler" onClick={(e) => {e.preventDefault(), setNavigationOpen(true)}} id="mobile-collapse">
                         <div className={`hamburger hamburger--arrowturn ${navigationOpen ? "is-active" : ""}`}>
                             <div className="hamburger-box">
                                 <div className="hamburger-inner"></div>
                             </div>
                         </div>
-                    </a> */}
+                    </a>
                     {/* <!--! [Start] nxl-head-mobile-toggler !-->
                     <!--! [Start] nxl-navigation-toggle !--> */}
-                    <div className="nxl-navigation-toggle navigation-up-1600">
-                        <a href="#" onClick={(e) => handleNavigationExpendUp(e, "show")} id="menu-mini-button" ref={miniButtonRef} style={{ display: navigationExpend ? "none" : "block" }}>
-                            {/* <FiAlignLeft size={24} /> */}
-                        </a>
-                        <a href="#" onClick={(e) => handleNavigationExpendUp(e, "hide")} id="menu-expend-button" ref={expendButtonRef} style={{ display: navigationExpend ? "block" : "none" }}>
-                            {/* <FiArrowRight size={24} /> */}
-                        </a>
-                    </div>
-                    <div className="nxl-navigation-toggle navigation-down-1600">
-                        <a href="#" onClick={(e) => handleNavigationExpendDown(e, "hide")} id="menu-mini-button" ref={miniButtonRef} style={{ display: navigationExpend ? "block" : "none" }}>
-                            {/* <FiAlignLeft size={24} /> */}
-                        </a>
-                        <a href="#" onClick={(e) => handleNavigationExpendDown(e, "show")} id="menu-expend-button" ref={expendButtonRef} style={{ display: navigationExpend ? "none" : "block" }}>
-                            {/* <FiArrowRight size={24} /> */}
-                        </a>
-                    </div>
+                        <div className="nxl-navigation-toggle navigation-up-1600">
+                            <a href="#" id="menu-expend-button" ref={expendButtonRef} style={{ display: "block" }}>
+                                {/* <FiArrowRight size={24} /> */}
+                            </a>
+                        </div>
+                        <div className="nxl-navigation-toggle navigation-down-1600">
+                            <a href="#" id="menu-expend-button" ref={expendButtonRef} style={{ display: "block" }}>
+                                {/* <FiArrowRight size={24} /> */}
+                            </a>
+                        </div>
+
                     {/* <!--! [End] nxl-navigation-toggle !-->
                     <!--! [Start] nxl-lavel-mega-menu-toggle !--> */}
-                    <div className="nxl-lavel-mega-menu-toggle d-flex d-lg-none">
+                    {/* <div className="nxl-lavel-mega-menu-toggle d-flex d-lg-none">
                         <a href="#" onClick={(e) => {e.preventDefault(), setOpenMegaMenu(true)}} id="nxl-lavel-mega-menu-open">
                             <FiAlignLeft size={24} />
                         </a>
-                    </div>
+                    </div> */}
                     {/* <!--! [End] nxl-lavel-mega-menu-toggle !-->
                     <!--! [Start] nxl-lavel-mega-menu !--> */}
                     <div className="nxl-drp-link nxl-lavel-mega-menu">
@@ -184,7 +167,7 @@ const Header = () => {
                 <!--! [Start] Header Right !--> */}
                 <div className="header-right ms-auto">
                     <div className="d-flex align-items-center">
-                        <SearchModal />
+                        {/* <SearchModal /> */}
                         <LanguagesModal />
                         <div className="nxl-h-item d-none d-sm-flex" >
                             <div className="full-screen-switcher">

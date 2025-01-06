@@ -8,24 +8,15 @@ import BillableTimeChart from '@/components/widgetsCharts/BillableTimeCart'
 import TimeStatistics from '@/components/widgetsStatistics/TimeStatistics'
 import ProjectTimeMiscellaneous from '@/components/widgetsMiscellaneous/ProjectTimeMiscellaneous'
 
-const ReportsTimesheets = () => {
+
+const RecruitmentMetrics = () => {
     return (
         <>
             <PageHeader >
                 <PageHeaderWidgets />
             </PageHeader>
-            <div className='main-content'>
-                <div className='row'>
-                    <TimeStatistics />
-                    <TimeLoggedChart />
-                    <BillableTimeChart />
-                    <ProjectTimeMiscellaneous />
-                    <ProjectTracker />
-                </div>
-            </div>
-            <Footer />
         </>
     )
 }
 
-export default ReportsTimesheets
+export default RecruitmentMetrics

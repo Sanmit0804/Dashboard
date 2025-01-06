@@ -7,7 +7,7 @@ const LoginCover = () => {
       <div className="auth-cover-content-inner">
         <div className="auth-cover-content-wrapper">
           <div className="auth-img">
-            <img src="/images/ALOIS_SOLUTIONS_LOGO.png" alt="img" className="img-fluid" />
+            <img src="/images/ALOIS_SOLUTIONS_PNG.png" alt="img" className="img-fluid" />
           </div>
         </div>
       </div>

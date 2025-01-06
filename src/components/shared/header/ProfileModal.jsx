@@ -1,20 +1,20 @@
 import React, { Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 import { FiActivity, FiBell, FiChevronRight, FiDollarSign, FiLogOut, FiSettings, FiUser } from "react-icons/fi"
+import { IoIosSwap } from "react-icons/io";
 
 const activePosition = ["Active", "Always", "Bussy", "Inactive", "Disabled", "Cutomization"]
 const subscriptionsList = ["Plan", "Billings", "Referrals", "Payments", "Statements", "Subscriptions"]
 
 const ProfileModal = () => {
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
 
     const handleLogout = () => {
-        // Perform any necessary cleanup before logout here (e.g., clearing tokens, etc.)
-
-        // Redirect to login page
+        localStorage.removeItem('token');
         navigate('/authentication/login/cover');
     }
+
 
     return (
         <div className="dropdown nxl-h-item">
@@ -86,6 +86,10 @@ const ProfileModal = () => {
                     </div>
                 </div>
                 <div className="dropdown-divider"></div>
+                <a href="#" className="dropdown-item">
+                    <i ><IoIosSwap /></i>
+                    <span>Admin Mode</span>
+                </a>
                 <a href="#" className="dropdown-item">
                     <i ><FiUser /></i>
                     <span>Profile Details</span>
