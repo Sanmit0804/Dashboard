@@ -17,7 +17,7 @@ const NavigationManu = () => {
                 <div className="m-header">
                     <Link to="/" className="b-brand">
                         {/* <!-- ========   change your logo hear   ============ --> */}
-                        <img src="/images/ALOIS_SOLUTIONS_PNG.png" alt="logo" className="logo logo-lg" height={"100px"} />
+                        <img src="/images/ALOIS_SOLUTIONS_PNG.png" alt="logo" className="logo logo-lg" height={"100px"} style={{filter: 'none'}} />
                         <img src="/images/ALOIS_SOLUTIONS_PNG.png" alt="logo" className="logo logo-sm" />
                         {/* <img src="/images/logo-abbr.png" alt="logo" className="logo logo-sm" /> */}
                     </Link>

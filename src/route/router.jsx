@@ -72,6 +72,7 @@ import WidgetsMiscellaneous from "../pages/widgets-miscellaneous";
 import ProtectedRoute from '../components/ProtectedRoute'
 import RecruitmentMetrics from '../../src/pages/recruitment-metrics';
 import CandidateAnalysis from '../../src/pages/CandidateAnalysis';
+import CandidateExperienceMatrics from "../../src/pages/CandidateExperienceMatrics";
 
 export const router = createBrowserRouter([
     {
@@ -143,15 +144,15 @@ export const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/proposal/edit",
+                path: "/corporate-recruitment/candidate-experience-matrics",
                 element: (
                     <ProtectedRoute>
-                        <ProposalEdit />
+                        <CandidateExperienceMatrics />
                     </ProtectedRoute>
                 ),
             },
             {
-                path: "/proposal/create",
+                path: "/corporate-recruitment/hiring-trends",
                 element: (
                     <ProtectedRoute>
                         <ProposalCreate />

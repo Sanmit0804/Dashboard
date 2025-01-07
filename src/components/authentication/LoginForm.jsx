@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FiFacebook, FiGithub, FiTwitter } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import topTost from '@/utils/topTost';
 
 const LoginForm = ({ registerPath, resetPath }) => {
     const [showPassword, setShowPassword] = useState(false);
@@ -41,7 +42,7 @@ const LoginForm = ({ registerPath, resetPath }) => {
                 setError(data.message || 'Login failed. Please try again.');
             }
         } catch (err) {
-            setError('Login failed. Please enter valid credentials.');
+            topTost('error', 'Please check your credentials');
         }
     };
 

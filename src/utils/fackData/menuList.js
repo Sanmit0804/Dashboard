@@ -75,13 +75,13 @@ export const menuList = [
             {
                 id: 3,
                 name: "Candidate Experience Metrics",
-                path: "/applications/tasks",
+                path: "/corporate-recruitment/candidate-experience-matrics",
                 subdropdownMenu: false
             },
             {
                 id: 4,
                 name: "Hiring Trends",
-                path: "/applications/notes",
+                path: "/corporate-recruitment/hiring-trends",
                 subdropdownMenu: false
             },
             {
