@@ -4,11 +4,12 @@ import { optionsMiscellaneous } from './SellingStatusMiscellaneous';
 import getIcon from '@/utils/getIcon';
 import ReactApexChart from 'react-apexcharts';
 import { trafficChartOptions } from '@/utils/chartsLogic/trafficChartOptions';
+import CardHeader from '../shared/CardHeader';
 const trafficData = [
     { icon: 'feather-airplay', bgClass: 'border-soft-primary', text: 'Organic Traffics', value: '8,865' },
     { icon: 'feather-layers', bgClass: 'border-soft-warning', text: 'Referral Traffics', value: '6,579' },
-    { icon: 'feather-link-2', bgClass: 'border-soft-danger', text: 'Affiliates Traffics', value: '5,865' },
-    { icon: 'feather-bookmark', bgClass: 'border-soft-success', text: 'Others Traffics', value: '2,354' },
+    { icon: 'feather-dollar-sign', bgClass: 'border-soft-danger', text: 'Paid Search', value: '5,865' },
+    { icon: 'fa-linkedin', bgClass: 'border-soft-success', text: 'Social Media', value: '2,354' },
 ];
 
 
@@ -17,17 +18,17 @@ const TrafficSourceMiscellaneous = () => {
     return (
         <div className="col-xxl-4">
             <div className="card stretch stretch-full overflow-hidden">
-                <div className="bg-danger text-white">
+                <CardHeader title={'Traffic Source'} />
+                <div className="mb-5">
                     <div className="p-4 d-flex justify-content-between align-items-center">
-                        <h5 className="text-reset">Traffic Source</h5>
-                        <Dropdown dropdownItems={optionsMiscellaneous} />
+                        {/* <Dropdown dropdownItems={optionsMiscellaneous} /> */}
                     </div>
-                    <ReactApexChart
+                    {/* <ReactApexChart
                         type='area'
                         height={215}
                         options={chartOptions}
                         series={chartOptions.series}
-                    />
+                    /> */}
                 </div>
                 <div className="card-body">
                     <div className="row g-4">

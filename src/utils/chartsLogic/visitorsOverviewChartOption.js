@@ -9,7 +9,7 @@ export const visitorsOverviewChartOption = () => {
             },
         },
         xaxis: {
-            categories: ["JAN/22", "FEB/22", "MAR/22", "APR/22", "MAY/22", "JUN/22", "JUL/22"],
+            categories: ["JAN/24", "FEB/24", "MAR/24", "APR/24", "MAY/24", "JUN/24", "JUL/24"],
             axisBorder: {
                 show: !1
             },
@@ -74,9 +74,9 @@ export const visitorsOverviewChartOption = () => {
             }
         },
         series: [
-            { name: "Unique Visitors", data: [20, 45, 10, 75, 35, 80, 40], type: "area" },
-            { name: "Unique Page Views", data: [25, 60, 20, 90, 45, 100, 55], type: "area" },
-            { name: "Unique Impression", data: [30, 40, 15, 70, 30, 85, 45], type: "area" },
+            { name: "Visitors", data: [20, 45, 10, 75, 35, 80, 40], type: "area" },
+            { name: "Unique Visitors", data: [10, 40, 9, 50, 25, 50, 30], type: "area" },
+            { name: "Leads", data: [5, 40, 2, 45, 20, 25, 15], type: "area" },
         ],
         tooltip: {
             y: {

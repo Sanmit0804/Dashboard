@@ -15,7 +15,7 @@ const EmailOverview = () => {
                             <h5 className="mb-1">Email Reports</h5>
                             <span className="fs-12 text-muted">Email Campaign Reports</span>
                         </div>
-                        <Link to="#" className="btn btn-light-brand">View Alls</Link>
+                        {/* <Link to="#" className="btn btn-light-brand">View Alls</Link> */}
                     </div>
                     <div className="row">
                         {

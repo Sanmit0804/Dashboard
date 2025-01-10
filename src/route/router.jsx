@@ -72,7 +72,12 @@ import WidgetsMiscellaneous from "../pages/widgets-miscellaneous";
 import ProtectedRoute from '../components/ProtectedRoute'
 import RecruitmentMetrics from '../../src/pages/recruitment-metrics';
 import CandidateAnalysis from '../../src/pages/CandidateAnalysis';
-import CandidateExperienceMatrics from "../../src/pages/CandidateExperienceMatrics";
+import WebsiteAnalysis from '../../src/pages/WebsiteAnalysis'
+import SocialMediaPerformance from "../../src/pages/SocialMediaPerformance";
+import FacebookStatistics from "../../src/pages/FacebookStatistics";
+import XStatistics from "../../src/pages/XStatistics";
+import InstaStatistics from "../pages/InstaStatistics";
+import LinkedInStatistics from "../../src/pages/LinkedInStatistics";
 
 export const router = createBrowserRouter([
     {
@@ -83,7 +88,7 @@ export const router = createBrowserRouter([
                 path: "/",
                 element: (
                     <ProtectedRoute>
-                        <Home />
+                        {/* <Home /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -91,12 +96,12 @@ export const router = createBrowserRouter([
                 path: "/dashboards/analytics",
                 element: (
                     <ProtectedRoute>
-                        <Analytics />
+                        {/* <Analytics /> */}
                     </ProtectedRoute>
                 ),
             },
             {
-                path: "/reports/sales",
+                path: "/Human-resource/HR-Summary-Report",
                 element: (
                     <ProtectedRoute>
                         <ReportsSales />
@@ -104,7 +109,7 @@ export const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/reports/leads",
+                path: "/Human-resource/recruitment",
                 element: (
                     <ProtectedRoute>
                         <ReportsLeads />
@@ -112,7 +117,7 @@ export const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/reports/project",
+                path: "/Human-resource/employee-management",
                 element: (
                     <ProtectedRoute>
                         <ReportsProject />
@@ -120,7 +125,7 @@ export const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/reports/timesheets",
+                path: "/Human-resource/retention-turnover",
                 element: (
                     <ProtectedRoute>
                         <ReportsTimesheets />
@@ -144,18 +149,50 @@ export const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/corporate-recruitment/candidate-experience-matrics",
+                path: "/digital-marketing/website-analysis",
                 element: (
                     <ProtectedRoute>
-                        <CandidateExperienceMatrics />
+                        <WebsiteAnalysis/>
                     </ProtectedRoute>
                 ),
             },
             {
-                path: "/corporate-recruitment/hiring-trends",
+                path: "/digital-marketing/social-media-performance",
                 element: (
                     <ProtectedRoute>
-                        <ProposalCreate />
+                        <SocialMediaPerformance />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/digital-marketing/social-media-performance/facebook-statistics",
+                element: (
+                    <ProtectedRoute>
+                        <FacebookStatistics />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/digital-marketing/social-media-performance/x-statistics",
+                element: (
+                    <ProtectedRoute>
+                        <XStatistics />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/digital-marketing/social-media-performance/instagram-statistics",
+                element: (
+                    <ProtectedRoute>
+                        <InstaStatistics />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "/digital-marketing/social-media-performance/linkedin-statistics",
+                element: (
+                    <ProtectedRoute>
+                        <LinkedInStatistics />
                     </ProtectedRoute>
                 ),
             },
@@ -163,7 +200,7 @@ export const router = createBrowserRouter([
                 path: "/payment/list",
                 element: (
                     <ProtectedRoute>
-                        <PaymentList />
+                        {/* <PaymentList /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -171,7 +208,7 @@ export const router = createBrowserRouter([
                 path: "/payment/view",
                 element: (
                     <ProtectedRoute>
-                        <PaymentView />
+                        {/* <PaymentView /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -179,7 +216,7 @@ export const router = createBrowserRouter([
                 path: "/payment/create",
                 element: (
                     <ProtectedRoute>
-                        <PaymentCreate />
+                        {/* <PaymentCreate /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -187,7 +224,7 @@ export const router = createBrowserRouter([
                 path: "/customers/list",
                 element: (
                     <ProtectedRoute>
-                        <CustomersList />
+                        {/* <CustomersList /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -195,7 +232,7 @@ export const router = createBrowserRouter([
                 path: "/customers/view",
                 element: (
                     <ProtectedRoute>
-                        <CustomersView />
+                        {/* <CustomersView /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -203,7 +240,7 @@ export const router = createBrowserRouter([
                 path: "/customers/create",
                 element: (
                     <ProtectedRoute>
-                        <CustomersCreate />
+                        {/* <CustomersCreate /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -211,7 +248,7 @@ export const router = createBrowserRouter([
                 path: "/leads/list",
                 element: (
                     <ProtectedRoute>
-                        <LeadsList />
+                        {/* <LeadsList /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -219,7 +256,7 @@ export const router = createBrowserRouter([
                 path: "/leads/view",
                 element: (
                     <ProtectedRoute>
-                        <LeadsView />
+                        {/* <LeadsView /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -227,7 +264,7 @@ export const router = createBrowserRouter([
                 path: "/leads/create",
                 element: (
                     <ProtectedRoute>
-                        <LeadsCreate />
+                        {/* <LeadsCreate /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -235,7 +272,7 @@ export const router = createBrowserRouter([
                 path: "/projects/list",
                 element: (
                     <ProtectedRoute>
-                        <ProjectsList />
+                        {/* <ProjectsList /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -243,7 +280,7 @@ export const router = createBrowserRouter([
                 path: "/projects/view",
                 element: (
                     <ProtectedRoute>
-                        <ProjectsView />
+                        {/* <ProjectsView /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -251,7 +288,7 @@ export const router = createBrowserRouter([
                 path: "/projects/create",
                 element: (
                     <ProtectedRoute>
-                        <ProjectsCreate />
+                        {/* <ProjectsCreate /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -259,7 +296,7 @@ export const router = createBrowserRouter([
                 path: "/widgets/lists",
                 element: (
                     <ProtectedRoute>
-                        <WidgetsLists />
+                        {/* <WidgetsLists /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -267,7 +304,7 @@ export const router = createBrowserRouter([
                 path: "/widgets/tables",
                 element: (
                     <ProtectedRoute>
-                        <WidgetsTables />
+                        {/* <WidgetsTables /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -275,7 +312,7 @@ export const router = createBrowserRouter([
                 path: "/widgets/charts",
                 element: (
                     <ProtectedRoute>
-                        <WidgetsCharts />
+                        {/* <WidgetsCharts /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -283,7 +320,7 @@ export const router = createBrowserRouter([
                 path: "/widgets/statistics",
                 element: (
                     <ProtectedRoute>
-                        <WidgetsStatistics />
+                        {/* <WidgetsStatistics /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -291,7 +328,7 @@ export const router = createBrowserRouter([
                 path: "/widgets/miscellaneous",
                 element: (
                     <ProtectedRoute>
-                        <WidgetsMiscellaneous />
+                        {/* <WidgetsMiscellaneous /> */}
                     </ProtectedRoute>
                 ),
             },
@@ -299,7 +336,7 @@ export const router = createBrowserRouter([
                 path: "/help/knowledgebase",
                 element: (
                     <ProtectedRoute>
-                        <HelpKnowledgebase />
+                        {/* <HelpKnowledgebase /> */}
                     </ProtectedRoute>
                 ),
             },

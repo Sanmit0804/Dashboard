@@ -43,7 +43,7 @@ const Browser = ({title}) => {
                         </table>
                     </div>
                 </div>
-                <Link to="#" className="card-footer fs-11 fw-bold text-uppercase text-center">Explore Details</Link>
+                {/* <Link to="#" className="card-footer fs-11 fw-bold text-uppercase text-center">Explore Details</Link> */}
                 <CardLoader refreshKey={refreshKey} />
             </div>
         </div>

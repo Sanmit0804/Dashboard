@@ -29,26 +29,26 @@ export const menuList = [
         dropdownMenu: [
             {
                 id: 1,
-                name: "Hiring Report",
-                path: "/reports/sales",
+                name: "HR Summary Report",
+                path: "/Human-resource/HR-Summary-Report",
                 subdropdownMenu: false,
             },
             {
                 id: 2,
-                name: "Attrition Rate",
-                path: "",
+                name: "Recruitment",
+                path: "/Human-resource/recruitment",
                 subdropdownMenu: false,
             },
             {
                 id: 3,
-                name: "Gender Ratio",
-                path: "",
+                name: "Employee Management",
+                path: "/Human-resource/employee-management",
                 subdropdownMenu: false,
             },
             {
                 id: 4,
-                name: "Headcount Overview",
-                path: "",
+                name: "Retention & Turnover",
+                path: "/Human-resource/retention-turnover",
                 subdropdownMenu: false,
             },
         ]
@@ -75,13 +75,13 @@ export const menuList = [
             {
                 id: 3,
                 name: "Candidate Experience Metrics",
-                path: "/corporate-recruitment/candidate-experience-matrics",
+                path: "/applications/tasks",
                 subdropdownMenu: false
             },
             {
                 id: 4,
                 name: "Hiring Trends",
-                path: "/corporate-recruitment/hiring-trends",
+                path: "/applications/notes",
                 subdropdownMenu: false
             },
             {
@@ -102,53 +102,14 @@ export const menuList = [
             {
                 id: 1,
                 name: "Website Analysis",
-                path: "#",
-                subdropdownMenu: [
-                    {
-                        id: 1,
-                        name: "Website Traffic",
-                        subdropdownMenu: false,
-                    },
-                    {
-                        id: 2,
-                        name: "Bounce Rate",
-                        subdropdownMenu: false,
-                    },
-                    {
-                        id: 3,
-                        name: "Average Session Duration",
-                        subdropdownMenu: false,
-                    },
-                    {
-                        id: 4,
-                        name: "Top Pages Visited",
-                        subdropdownMenu: false,
-                    },
-                    {
-                        id: 5,
-                        name: "Traffic Sources",
-                        subdropdownMenu: false,
-                    },
-                ],
+                path: "/digital-marketing/website-analysis",
+                subdropdownMenu: false,
             },
             {
                 id: 2,
                 name: "Social Media Performance",
-                path: "#",
-                subdropdownMenu: [
-                    {
-                        id: 1,
-                        name: "Engagement Metrics",
-                    },
-                    {
-                        id: 2,
-                        name: "Followers Growth",
-                    },
-                    {
-                        id: 3,
-                        name: "Impressions & Reach",
-                    },
-                ]
+                path: "/digital-marketing/social-media-performance",
+                subdropdownMenu: false,
             },
         ],
     },

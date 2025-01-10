@@ -7,9 +7,9 @@ import { FiLink2 } from 'react-icons/fi'
 import { topCountryClickChartOptions } from '@/utils/chartsLogic/topCountryClickChartOption'
 
 const countryStatsData = [
-    { country: 'Australia', clicks: '2,258', flag: "/images/flags/4x3/au.svg" },
+    { country: 'India', clicks: '2,258', flag: "/images/flags/4x3/in.svg" },
     { country: 'United States', clicks: '2,025', flag: "/images/flags/4x3/us.svg" },
-    { country: 'Bangladesh', clicks: '1,836', flag: "/images/flags/4x3/bd.svg" },
+    { country: 'Australia', clicks: '2,258', flag: "/images/flags/4x3/au.svg" },
 ];
 
 const TopCountryChart = () => {

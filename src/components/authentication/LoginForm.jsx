@@ -2,26 +2,28 @@ import React, { useState } from 'react';
 import { FiFacebook, FiGithub, FiTwitter } from 'react-icons/fi';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import topTost from '@/utils/topTost';
+import { CSpinner } from '@coreui/react';
 
 const LoginForm = ({ registerPath, resetPath }) => {
     const [showPassword, setShowPassword] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false); // Add loading state
     const navigate = useNavigate();
+    const url = import.meta.env.VITE_BACKEND_URL;
 
     const togglePasswordVisibility = () => {
         setShowPassword((prev) => !prev);
     };
 
     const handleSubmit = async (e) => {
-        console.log("handlesubmit clicked")
         e.preventDefault();
         setError(''); // Clear any previous error messages
+        setLoading(true); // Set loading to true when submitting the form
 
         try {
-            const response = await fetch('http://localhost:2002/api/user/login', {
+            const response = await fetch(`${url}/api/user/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,9 +32,7 @@ const LoginForm = ({ registerPath, resetPath }) => {
             });
 
             const data = await response.json();
-            console.log("data---",data);
             localStorage.setItem('token', data.token); // Store token in localStorage
-            // fetchCurrentUser(); // Fetch user details after login
 
             if (response.ok) {
                 // If login is successful, navigate to the home page
@@ -42,7 +42,9 @@ const LoginForm = ({ registerPath, resetPath }) => {
                 setError(data.message || 'Login failed. Please try again.');
             }
         } catch (err) {
-            topTost('error', 'Please check your credentials');
+            setError('Login failed. Please enter valid credentials.');
+        } finally {
+            setLoading(false); // Reset loading state when done
         }
     };
 
@@ -95,8 +97,17 @@ const LoginForm = ({ registerPath, resetPath }) => {
                     </div>
                 </div>
                 <div className="mt-5">
-                    <button type="submit" onClick={handleSubmit} className="btn btn-lg btn-primary w-100" >
-                        Login
+                    <button 
+                        type="submit" 
+                        onClick={handleSubmit} 
+                        className="btn btn-lg btn-primary w-100" 
+                        disabled={loading} // Disable button while loading
+                    >
+                        {loading ? (
+                            <CSpinner color='white' size='sm' />
+                        ) : (
+                            'Login'
+                        )}
                     </button>
                 </div>
             </form>

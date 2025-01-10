@@ -25,7 +25,7 @@ const SocialMediaStatisticsChart = () => {
                         height={376}
                     />
                 </div>
-                <Link to="#" className="card-footer fs-11 fw-bold text-uppercase text-center">Explore Details</Link>
+                {/* <Link to="#" className="card-footer fs-11 fw-bold text-uppercase text-center">Explore Details</Link> */}
             </div>
             <CardLoader refreshKey={refreshKey} />
         </div>

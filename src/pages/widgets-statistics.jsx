@@ -17,7 +17,7 @@ import OrdersStatistics from '@/components/widgetsStatistics/OrdersStatistics'
 import UserOverviewStatisticsTwo from '@/components/widgetsStatistics/UserOverviewStatisticsTwo'
 import ProjectsStatisticsTwo from '@/components/widgetsStatistics/ProjectsStatisticsTwo'
 import UserOverviewStatisticsThree from '@/components/widgetsStatistics/UserOverviewStatisticsThree'
-import SocilMediaStatistics from '@/components/widgetsStatistics/SocilMediaStatistics'
+import SocilMediaStatistics from '@/components/widgetsStatistics/SocialMediaStatistics'
 import Footer from '@/components/shared/Footer'
 
 const WidgetsStatistics = () => {

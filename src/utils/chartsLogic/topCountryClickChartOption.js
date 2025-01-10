@@ -4,7 +4,7 @@ export const topCountryClickChartOptions = () => {
         dataLabels: {
             enabled: !1
         },
-        labels: ["Australia", "United State", "Bangladesh"],
+        labels: ["India", "United State", "Australia"],
         series: [64, 25, 45],
         stroke: { width: 0 },
         legend: { show: !1 },
