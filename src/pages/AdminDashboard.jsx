@@ -4,6 +4,9 @@ import CustomUsersList from '@/components/widgetsTables/CustomUsersList';
 import topTost from '@/utils/topTost';
 import PageHeader from '@/components/shared/pageHeader/PageHeader';
 import SelectDropdown from '@/components/shared/SelectDropdown';
+import ChatDrawer from '@/components/widgetsStatistics/ChatDrawer';
+import { Link } from 'react-router-dom';
+import { FiUserPlus } from 'react-icons/fi';
 
 const AdminDashboard = () => {
     const [users, setUsers] = useState([]);
@@ -82,9 +85,24 @@ const AdminDashboard = () => {
         fetchUsers();
     }, []);
 
+    const samplePrompts = [
+        "Show all users with the role of Manager.",
+        "Update user role to Admin for user John Doe.",
+        "Display all users who are Admins.",
+        "How do I create a new user?"
+    ];
+    
     return (
         <>
-            <PageHeader />
+            <PageHeader>
+                <div className="d-flex gap-2">
+                <Link to="/user-management/create-user" className="btn btn-primary">
+                    <FiUserPlus size={16} className='me-2' />
+                    <span>Create User</span>
+                </Link>
+                <ChatDrawer samplePrompts={samplePrompts}/>
+                </div>
+            </PageHeader>
             <div className={`main-content ${showModal ? 'modal-open' : ''}`}>
                 {/* Users List */}
                 <CustomUsersList title={'Users'} usersData={users} handleUserDelete={handleUserDelete} handleUserEdit={handleUserEdit} />
