@@ -36,7 +36,7 @@ const AdminDashboard = () => {
             setEditId(null);
             fetchUsers();
             setShowModal(false); // Close the modal after submit
-            topTost('success', 'User saved successfully');
+            topTost('success', 'User update successfully');
         } catch (error) {
             console.error('Error saving user:', error);
         }
