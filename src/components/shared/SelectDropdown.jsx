@@ -3,13 +3,11 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import PropTypes from 'prop-types';
 import getIcon from '@/utils/getIcon';
 
-const SelectDropdown = ({ options, selectedOption, onSelectOption, className, defaultSelect }) => {
+const SelectDropdown = ({ options, selectedOption, onSelectOption, className, defaultSelect, searchAvailable }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
     const [openUpwards, setOpenUpwards] = useState(false);
     const [localSelectedOption, setLocalSelectedOption] = useState();
-    const ref = useRef()
-
     const dropdownRef = useRef(null);
 
     useEffect(() => {
@@ -31,7 +29,6 @@ const SelectDropdown = ({ options, selectedOption, onSelectOption, className, de
     }, [defaultSelect, options]);
 
     const toggleDropdown = () => setIsOpen(!isOpen);
-
 
     const filteredOptions = options?.filter(option =>
         option.label.toLowerCase().includes(searchTerm.toLowerCase())
@@ -71,15 +68,17 @@ const SelectDropdown = ({ options, selectedOption, onSelectOption, className, de
 
             {isOpen && (
                 <div className="dropdown-list">
-                    <div className='search-input-outer'>
-                        <input
-                            type="text"
-                            className="search-input"
-                            placeholder="Search..."
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                    </div>
+                    {searchAvailable && (
+                        <div className='search-input-outer'>
+                            <input
+                                type="text"
+                                className="search-input"
+                                placeholder="Search..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                            />
+                        </div>
+                    )}
                     <ul>
                         {filteredOptions.length > 0 ? (
                             filteredOptions.map((option) => (
@@ -105,14 +104,17 @@ const SelectDropdown = ({ options, selectedOption, onSelectOption, className, de
     );
 };
 
+SelectDropdown.propTypes = {
+    options: PropTypes.array.isRequired,
+    selectedOption: PropTypes.object,
+    onSelectOption: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    defaultSelect: PropTypes.string,
+    searchAvailable: PropTypes.bool // New prop for controlling search input visibility
+};
+
+SelectDropdown.defaultProps = {
+    searchAvailable: true
+};
+
 export default SelectDropdown;
-
-// SelectDropdown.propTypes = {
-//     options: PropTypes.array.isRequired,
-//     defaultSelect: PropTypes.number,
-//     currentSelect: PropTypes.func
-// };
-
-// SelectDropdown.defaultProps = {
-//     currentSelect: () => { }
-// };

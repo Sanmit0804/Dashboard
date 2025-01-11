@@ -17,7 +17,7 @@ const RegisterForm = ({ path }) => {
   const [strength, setStrength] = useState(0);
   const [error, setError] = useState(""); // Error message state
   const [loading, setLoading] = useState(false); // Loading state for form submission
-  const url = import.meta.env.VITE_BACKEND_URL;
+  const url = import.meta.env.VITE_BACKEND_URL || 'http://localhost:2002';
 
   const navigate = useNavigate(); 
 
@@ -74,7 +74,7 @@ const RegisterForm = ({ path }) => {
       setLoading(true);
   
       // API call to register the user
-      const response = await axios.post(`${url}/api/user/register`, {
+      const response = await axios.post(`${url}/api/users/register`, {
         firstName,
         lastName,
         email,

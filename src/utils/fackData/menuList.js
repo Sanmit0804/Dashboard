@@ -4,7 +4,6 @@ export const menuList = [
         name: "dashboards",
         path: "#",
         icon: 'feather-airplay',
-        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -25,7 +24,6 @@ export const menuList = [
         name: "Human Resource",
         path: "#",
         icon: 'feather-users',
-        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -58,7 +56,6 @@ export const menuList = [
         name: "Corporate Recruitment",
         path: '#',
         icon: 'feather-send',
-        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -97,7 +94,6 @@ export const menuList = [
         name: "Digital Marketing",
         path: "#",
         icon: 'feather-alert-circle',
-        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -118,7 +114,6 @@ export const menuList = [
     //     name: "Labs",
     //     path: "#",
     //     icon: 'feather-layout',
-    //     userType: 'user',
     //     dropdownMenu: [
     //         {
     //             id: 1,
@@ -145,7 +140,6 @@ export const menuList = [
         name: "L&D",
         path: "#",
         icon: 'feather-users',
-        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -178,7 +172,6 @@ export const menuList = [
         name: "Finance",
         path: "#",
         icon: 'feather-dollar-sign',
-        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -217,7 +210,6 @@ export const menuList = [
         name: "IT (Information Tech)",
         path: "#",
         icon: 'feather-briefcase',
-        userType: 'user',
         dropdownMenu: [
             {
                 id: 1,
@@ -239,38 +231,27 @@ export const menuList = [
             }
         ]
     },
-    // {
-    //     id: 8,
-    //     name: "Support/Service",
-    //     path: "#",
-    //     icon: 'feather-layout',
-    //     dropdownMenu: [
-    //         {
-    //             id: 1,
-    //             name: "Help Desk Support",
-    //             path: "/widgets/lists",
-    //             subdropdownMenu: false
-    //         },
-    //         {
-    //             id: 2,
-    //             name: "Complaint Resolution",
-    //             path: "/widgets/tables",
-    //             subdropdownMenu: false
-    //         },
-    //         {
-    //             id: 3,
-    //             name: "Client Success Management",
-    //             path: "/widgets/charts",
-    //             subdropdownMenu: false
-    //         },
-    //         {
-    //             id: 4,
-    //             name: "After-Sales Support",
-    //             path: "/widgets/statistics",
-    //             subdropdownMenu: false
-    //         },
-    //     ]
-    // },
+    {
+        id: 8,
+        name: "User Management",
+        path: "#",
+        icon: 'feather-user',
+        userType: 'admin',
+        dropdownMenu: [
+            {
+                id: 1,
+                name: "Create User",
+                path: 'user-management/create-user',
+                subdropdownMenu: false
+            },
+            {
+                id: 2,
+                name: "Manage Users",
+                path: 'user-management/manage-user',
+                subdropdownMenu: false
+            },
+        ]
+    },
     // {
     //     id: 9,
     //     name: "settings",

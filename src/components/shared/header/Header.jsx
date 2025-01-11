@@ -168,7 +168,7 @@ const Header = () => {
                 <div className="header-right ms-auto">
                     <div className="d-flex align-items-center">
                         {/* <SearchModal /> */}
-                        <LanguagesModal />
+                        {/* <LanguagesModal /> */}
                         <div className="nxl-h-item d-none d-sm-flex" >
                             <div className="full-screen-switcher">
                                 <span className="nxl-head-link me-0">

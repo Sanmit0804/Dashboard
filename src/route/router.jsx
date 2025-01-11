@@ -78,6 +78,9 @@ import FacebookStatistics from "../../src/pages/FacebookStatistics";
 import XStatistics from "../../src/pages/XStatistics";
 import InstaStatistics from "../pages/InstaStatistics";
 import LinkedInStatistics from "../../src/pages/LinkedInStatistics";
+import AdminDashboard from '../../src/pages/AdminDashboard';
+import CreateUser from "../../src/pages/CreateUser";
+import EditUserForm from "@/components/users/EditUserForm";
 
 export const router = createBrowserRouter([
     {
@@ -197,18 +200,26 @@ export const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/payment/list",
+                path: "user-management/manage-user",
                 element: (
                     <ProtectedRoute>
-                        {/* <PaymentList /> */}
+                        <AdminDashboard />
                     </ProtectedRoute>
                 ),
             },
             {
-                path: "/payment/view",
+                path: "user-management/create-user",
                 element: (
                     <ProtectedRoute>
-                        {/* <PaymentView /> */}
+                        <CreateUser />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "user-management/manage-user/edit-user",
+                element: (
+                    <ProtectedRoute>
+                        <EditUserForm/>
                     </ProtectedRoute>
                 ),
             },

@@ -2,7 +2,7 @@ import Swal from "sweetalert2";
 import withReactContent from 'sweetalert2-react-content'
 const MySwal = withReactContent(Swal)
 
-const topTost = () => {
+const topTost = ( iconType, titletype ) => {
     MySwal.mixin({
         toast: true,
         position: 'top-end',
@@ -15,8 +15,8 @@ const topTost = () => {
             toast.addEventListener('mouseleave', Swal.resumeTimer);
         }
     }).fire({
-        icon: 'success',
-        title: 'Action Execute Successfully'
+        icon: iconType || 'success',
+        title: titletype|| 'Action Execute Successfully'
     });
 }
 
