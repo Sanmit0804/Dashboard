@@ -44,9 +44,12 @@ const SocialMediaPerformance = () => {
     return (
         <>
             <PageHeader>
-                <ChatDrawer
-                    samplePrompts={samplePrompts}
-                />
+                <div className="d-flex gap-2">
+                    <button className="btn btn-primary">Export</button>
+                    <ChatDrawer
+                        samplePrompts={samplePrompts}
+                    />
+                </div>
             </PageHeader>
 
             <div>
