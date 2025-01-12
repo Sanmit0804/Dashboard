@@ -4,6 +4,7 @@ import SocilMediaStatistics from "@/components/widgetsStatistics/SocialMediaStat
 import SocialPiplelineChart from "./SocialPipelineChart";
 import SelectDropdown from "@/components/shared/SelectDropdown";
 import ChatDrawer from "@/components/widgetsStatistics/ChatDrawer";
+import Export from "@/components/widgets/Export";
 
 const websiteSocialMediaMapping = {
     "aloissolutions.com": ["facebook", "x", "linkedin", "instagram"],
@@ -21,6 +22,11 @@ const SocialMediaPerformance = () => {
         setSelectedWebsite(selectedOption.value);
     };
 
+    const handleFileUpload = (file) => {
+        console.log("Uploaded file:", file);
+        // Handle the uploaded file (e.g., parse it or send it to the backend)
+    };
+
     const websiteOptions = [
         { value: "aloissolutions.com", label: "ALOIS Solutions" },
         { value: "aloiscomposites.com", label: "ALOIS Composites" },
@@ -29,7 +35,6 @@ const SocialMediaPerformance = () => {
         { value: "adrivaservices.com", label: "Adriva Business Services" },
         { value: "akinolabs.com", label: "AKINO Labs" },
     ];
-
 
     const samplePrompts = [
         "Show me today's social media stats.",
@@ -45,10 +50,8 @@ const SocialMediaPerformance = () => {
         <>
             <PageHeader>
                 <div className="d-flex gap-2">
-                    <button className="btn btn-primary">Export</button>
-                    <ChatDrawer
-                        samplePrompts={samplePrompts}
-                    />
+                    <Export onFileUpload={handleFileUpload} />
+                    <ChatDrawer samplePrompts={samplePrompts} />
                 </div>
             </PageHeader>
 
@@ -63,10 +66,18 @@ const SocialMediaPerformance = () => {
 
             <div className="main-content">
                 <div className="row">
-                    {availableSocialMedia.includes("facebook") && <SocilMediaStatistics platform="facebook" />}
-                    {availableSocialMedia.includes("instagram") && <SocilMediaStatistics platform="instagram" />}
-                    {availableSocialMedia.includes("linkedin") && <SocilMediaStatistics platform="linkedin" />}
-                    {availableSocialMedia.includes("x") && <SocilMediaStatistics platform="x" />}
+                    {availableSocialMedia.includes("facebook") && (
+                        <SocilMediaStatistics platform="facebook" />
+                    )}
+                    {availableSocialMedia.includes("instagram") && (
+                        <SocilMediaStatistics platform="instagram" />
+                    )}
+                    {availableSocialMedia.includes("linkedin") && (
+                        <SocilMediaStatistics platform="linkedin" />
+                    )}
+                    {availableSocialMedia.includes("x") && (
+                        <SocilMediaStatistics platform="x" />
+                    )}
 
                     <SocialPiplelineChart isFooterShow={true} />
                 </div>

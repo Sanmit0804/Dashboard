@@ -60,29 +60,33 @@ const CreateUserForm = ({ handleSubmit }) => {
                 />
               </div>
             </div>
-            <div className="mb-4">
-              <label className="form-label">Email <span className="text-danger">*</span></label>
-              <input
-                type="email"
-                className="form-control"
-                placeholder="Email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="form-label">Password <span className="text-danger">*</span></label>
-              <PasswordWidget
-                name="password"
-                onChange={handleChange}
-                value={formData.password || ''}
-                placeholder="Password"
-                required={true}
-              />
+            <div className="row mb-4">
 
+              <div className="col-md-6">
+                <label className="form-label">Email <span className="text-danger">*</span></label>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+              <div className="col-md-6">
+                <label className="form-label">Password <span className="text-danger">*</span></label>
+                <PasswordWidget
+                  name="password"
+                  onChange={handleChange}
+                  value={formData.password || ''}
+                  placeholder="Password"
+                  required={true}
+                />
+
+              </div>
             </div>
+
             <div className="mb-4">
               <label className="form-label">Role <span className="text-danger">*</span></label>
               <SelectDropdown
